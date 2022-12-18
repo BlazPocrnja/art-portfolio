@@ -1,6 +1,6 @@
-require(`dotenv`).config()
+require(`dotenv`).config();
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -26,9 +26,10 @@ module.exports = {
       options: {
         navigation: [
           { name: `Projects`, slug: `/projects` },
-          { name: `Art`, slug: `/art` },
           { name: `About`, slug: `/about` },
+          { name: `Contact`, slug: `/contact` },
         ],
+        homepageProjectLimit: 9999,
       },
     },
     {
@@ -63,6 +64,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        failOnError: false,
+      },
+    },
     shouldAnalyseBundle && {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
@@ -72,4 +79,4 @@ module.exports = {
       },
     },
   ].filter(Boolean),
-}
+};
