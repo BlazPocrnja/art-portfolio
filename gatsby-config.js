@@ -30,6 +30,7 @@ module.exports = {
           { name: `Contact`, slug: `/contact` },
         ],
         homepageProjectLimit: 9999,
+        mdx: false,
       },
     },
     {
@@ -68,6 +69,19 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         failOn: `none`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
       },
     },
     shouldAnalyseBundle && {
