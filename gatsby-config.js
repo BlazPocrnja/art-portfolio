@@ -65,9 +65,9 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-sharp",
+      resolve: `gatsby-plugin-sharp`,
       options: {
-        failOnError: false,
+        failOn: `none`,
       },
     },
     shouldAnalyseBundle && {
