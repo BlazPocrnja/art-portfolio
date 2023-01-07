@@ -1,7 +1,5 @@
 require(`dotenv`).config();
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
-
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -95,14 +93,6 @@ module.exports = {
         pluginConfig: {
           head: true,
         },
-      },
-    },
-    shouldAnalyseBundle && {
-      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-      options: {
-        analyzerMode: `static`,
-        reportFilename: `_bundle.html`,
-        openAnalyzer: false,
       },
     },
   ].filter(Boolean),
